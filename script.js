@@ -1,6 +1,8 @@
-let minValue = parseInt(prompt('Минимальное знание числа для игры','0')) || 0;
-let maxValue = parseInt(prompt('Максимальное знание числа для игры','100')) || 100;
-alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`);
+let minimum = parseInt(prompt('Минимальное значение числа для игры','0')) || 0;
+let maximum = parseInt(prompt('Максимальное значение числа для игры','100')) || 100;
+let minValue = (minimum < -999)? -999 : minimum;
+let maxValue = (maximum > 999)? 999 : maximum;
+alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его отгадаю`);
 let answerNumber  = Math.floor((minValue + maxValue) / 2);
 let orderNumber = 1;
 let gameRun = true;
@@ -14,8 +16,10 @@ answerField.innerText = `Вы загадали число ${answerNumber }?`;
 
 document.getElementById('btnRetry').addEventListener('click', function () {
     
-    minValue = parseInt(prompt('Минимальное знание числа для игры','0')) || 0;
-    maxValue = parseInt(prompt('Максимальное знание числа для игры','100')) || 100;
+    minimum = parseInt(prompt('Минимальное знание числа для игры','0')) || 0;
+    maximum = parseInt(prompt('Максимальное знание числа для игры','100')) || 100;
+    minValue = (minimum < -999)? -999 : minimum;
+    maxValue = (maximum > 999)? 999 : maximum;
     alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`);
     answerNumber  = Math.floor((minValue + maxValue) / 2);
     orderNumber = 1;
@@ -29,16 +33,13 @@ document.getElementById('btnOver').addEventListener('click', function () {
     if (gameRun){
         if (minValue === maxValue){
             const phraseRandom = Math.round( Math.random()*2);
-            // const answerPhrase = (phraseRandom === 1) ?
-                // `Вы загадали неправильное число!\n\u{1F914}` :
-                // `Я сдаюсь..\n\u{1F92F}`;
             let answerPhrase;
                 if (phraseRandom === 0){
-                    answerPhrase = `Что-то тут нечисто \u{1F914}`;
+                    answerPhrase = `Что-то здесь нечисто \u{1F914}`;
                 } else if (phraseRandom === 1){
                     answerPhrase = `А не врешь ли ты часом? \u{1F925}`;                
                 } else if (phraseRandom === 2){
-                    answerPhrase = `Кто-то забыл какое число загадал`;
+                    answerPhrase = `Кто-то забыл,\n какое число загадал? \u{1F604}`;
                 }                         
             answerField.innerText = answerPhrase;
             gameRun = false;
@@ -47,7 +48,16 @@ document.getElementById('btnOver').addEventListener('click', function () {
             answerNumber  = Math.floor((minValue + maxValue) / 2);
             orderNumber++;
             orderNumberField.innerText = orderNumber;
-            answerField.innerText = `Вы загадали число ${answerNumber }?`;
+            const phraseRandom = Math.round( Math.random()*2);
+            let answerPhrase;
+                if (phraseRandom === 0){
+                    answerPhrase = `Или ${answerNumber }?`;
+                } else if (phraseRandom === 1){
+                    answerPhrase = `Может ${answerNumber }?`;                
+                } else if (phraseRandom === 2){
+                    answerPhrase = `А, я знаю ${answerNumber }!`;
+                }                         
+            answerField.innerText = answerPhrase;
         }
     }
 })
@@ -58,11 +68,11 @@ document.getElementById('btnLess').addEventListener('click', function () {
             const phraseRandom = Math.round( Math.random()*2);
             let answerPhrase;
             if (phraseRandom === 0){
-                answerPhrase = `1AAAAAAAAAAA`;
+                answerPhrase = `Что-то здесь нечисто \u{1F914}`;
             } else if (phraseRandom === 1){
-                answerPhrase = `2AAAAAAAAAAA`;                
+                answerPhrase = `А не врешь ли ты часом? \u{1F925}`;                
             } else if (phraseRandom === 2){
-                answerPhrase = `3AAAAAAAAAAA`;
+                answerPhrase = `Кто-то забыл,\n какое число загадал? \u{1F604}`;
             }                   
             answerField.innerText = answerPhrase;
             gameRun = false;
@@ -71,7 +81,16 @@ document.getElementById('btnLess').addEventListener('click', function () {
             answerNumber  = Math.floor((minValue + maxValue) / 2);
             orderNumber++;
             orderNumberField.innerText = orderNumber;
-            answerField.innerText = `Вы загадали число ${answerNumber }?`;
+            const phraseRandom = Math.round( Math.random()*2);
+            let answerPhrase;
+                if (phraseRandom === 0){
+                    answerPhrase = `Или ${answerNumber }?`;
+                } else if (phraseRandom === 1){
+                    answerPhrase = `Может ${answerNumber }?`;                
+                } else if (phraseRandom === 2){
+                    answerPhrase = `А, я знаю ${answerNumber }!`;
+                }                         
+            answerField.innerText = answerPhrase;
         }
     }
 })
