@@ -1,4 +1,41 @@
+body {
+    background-color: rgb(230, 195, 155);
+}
+
 .game-card {
     height: 100vh;
     font-family: 'Open Sans', monospace;
+}
+
+.row {
+    margin-right: -30px;
+    margin-left: -30px;
+} 
+
+.card {
+    background-color: rgb(187, 124, 94);
+    border-width: 2px;
+    border-color: black;
+}
+
+.btn {
+    border-width: 1px;
+    border-color: black;
+}
+
+#btnRetry {
+    color: black;
+    background-color: rgb(185, 185, 11);
+}
+
+#btnEqual {
+    text-shadow: 1px 1px 1px rgb(88, 87, 87);
+}
+
+#btnOver {
+    text-shadow: 1px 1px 1px rgb(88, 87, 87);
+}
+
+#btnLess {
+    text-shadow: 1px 1px 1px rgb(88, 87, 87);
 }
