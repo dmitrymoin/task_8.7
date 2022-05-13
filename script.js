@@ -53,7 +53,7 @@ document.getElementById('btnOver').addEventListener('click', function () {
                 if (phraseRandom === 0){
                     answerPhrase = `Или ${answerNumber }?`;
                 } else if (phraseRandom === 1){
-                    answerPhrase = `Может ${answerNumber }?`;                
+                    answerPhrase = `Может это ${answerNumber }?`;                
                 } else if (phraseRandom === 2){
                     answerPhrase = `А, я знаю ${answerNumber }!`;
                 }                         
@@ -100,9 +100,9 @@ document.getElementById('btnEqual').addEventListener('click', function () {
         const phraseRandom = Math.round( Math.random()*2);
         let answerPhrase;
                 if (phraseRandom === 0){
-                    answerPhrase = `Плёвое дело!`;
+                    answerPhrase = `Плёвое дело!\u{1F92D}`;
                 } else if (phraseRandom === 1){
-                    answerPhrase = `Это было легко!`;                
+                    answerPhrase = `Это было легко!\u{1F609}`;                
                 } else if (phraseRandom === 2){
                     answerPhrase = `Проще простого \u{1F61C}`;
                 }
