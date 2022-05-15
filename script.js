@@ -1,7 +1,7 @@
-let minimum = parseInt(prompt('Минимальное значение числа для игры','0')) || 0;
-let maximum = parseInt(prompt('Максимальное значение числа для игры','100')) || 100;
-let minValue = (minimum < -999)? -999 : minimum;
-let maxValue = (maximum > 999)? 999 : maximum;
+let minValue = parseInt(prompt('Минимальное значение числа для игры','0')) || 0;
+let maxValue = parseInt(prompt('Максимальное значение числа для игры','100')) || 100;
+minValue = (minValue < -999)? -999 : minValue;
+maxValue = (maxValue > 999)? 999 : maxValue;
 alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его отгадаю`);
 let answerNumber  = Math.floor((minValue + maxValue) / 2);
 let orderNumber = 1;
@@ -16,10 +16,10 @@ answerField.innerText = `Вы загадали число ${answerNumber }?`;
 
 document.getElementById('btnRetry').addEventListener('click', function () {
     
-    minimum = parseInt(prompt('Минимальное знание числа для игры','0')) || 0;
-    maximum = parseInt(prompt('Максимальное знание числа для игры','100')) || 100;
-    minValue = (minimum < -999)? -999 : minimum;
-    maxValue = (maximum > 999)? 999 : maximum;
+    minValue = parseInt(prompt('Минимальное знание числа для игры','0')) || 0;
+    maxValue = parseInt(prompt('Максимальное знание числа для игры','100')) || 100;
+    minValue = (minValue < -999)? -999 : minValue;
+    maxValue = (maxValue > 999)? 999 : maxValue;
     alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`);
     answerNumber  = Math.floor((minValue + maxValue) / 2);
     orderNumber = 1;
